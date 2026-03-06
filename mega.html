@@ -84,18 +84,12 @@ background:#138808;
 <body>
 
 <div class="header">
-
 <img src="MEGA.png">
-
 <h1>MEGA TUTOR Registration</h1>
-
 </div>
 
 <div class="alert">
-
-⚠️ Please provide honest and accurate information.<br>
-False information will result in rejection.
-
+⚠️ Please provide accurate information.
 </div>
 
 <form id="tutorForm">
@@ -119,57 +113,40 @@ False information will result in rejection.
 <label>Phone Number</label>
 <input type="text" name="phone" required>
 
-<label>City / Region</label>
+<label>City</label>
 <input type="text" name="city" required>
 
-<label>Education</label>
-<input type="text" name="education" required>
+<label>Neighborhood / Specific Location</label>
+<input type="text" name="neighborhood" required>
 
-<label>Subjects You Can Teach</label>
-<textarea name="subjects" rows="3"></textarea>
+<label>Education Level</label>
+<input type="text" name="education" placeholder="Diploma / Degree / Masters etc" required>
 
-<label>Strength Subjects</label>
+<label>Teaching Grade Level</label>
+<select name="gradeLevel" required>
+<option value="">Select Grade</option>
+<option>Grade 1 - 6</option>
+<option>Grade 7 - 8</option>
+<option>Grade 9 - 10</option>
+<option>Grade 11 - 12</option>
+</select>
+
+<label>Strengths Subjects</label>
 <textarea name="strengths"></textarea>
-
-<label>Weakness Subjects</label>
-<textarea name="weaknesses"></textarea>
 
 <label>Teaching Method</label>
 <select name="teachingMethod">
-
 <option>Home</option>
-<option>Online</option>
-<option>Classroom</option>
-<option>Hybrid</option>
-
 </select>
 
-<label>Availability</label>
-<textarea name="availability"></textarea>
-
-<label>Years of Experience</label>
-<input type="number" name="experience">
-
 <label>Experience Level</label>
-
 <select name="level">
-
 <option value="1">1 Beginner</option>
 <option value="2">2 Novice</option>
 <option value="3">3 Intermediate</option>
 <option value="4">4 Advanced</option>
 <option value="5">5 Expert</option>
-
 </select>
-
-<label>Certifications</label>
-<input type="text" name="certifications">
-
-<label>Portfolio</label>
-<input type="url" name="portfolio">
-
-<label>Notes</label>
-<textarea name="notes"></textarea>
 
 <button type="submit">Submit Registration</button>
 
@@ -177,7 +154,8 @@ False information will result in rejection.
 
 <script>
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbz-2SI1MbIWRhtZWJqd9njBIyRSY1OMBmIPKRmBeQcNZ18RQJJZRNFi3kpIo1nF-Lmo/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbz-2SI1MbIWRhtZWJqd9njBIyRSY1OMBmIPKRmBeQcNZ18RQJJZRNFi3kpIo1nF-Lmo/exec"; 
+// 🔥 Replace with your Apps Script Web App URL
 
 const form = document.getElementById("tutorForm");
 
@@ -191,17 +169,12 @@ body:new FormData(form)
 })
 
 .then(response=>{
-
-alert("✅ Registration submitted successfully!");
-
+alert("✅ Registration Submitted Successfully!");
 form.reset();
-
 })
 
 .catch(error=>{
-
 alert("❌ Error submitting form");
-
 });
 
 });
